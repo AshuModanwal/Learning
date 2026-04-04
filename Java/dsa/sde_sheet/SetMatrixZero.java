@@ -38,6 +38,38 @@ public class SetMatrixZero {
     }
 
     private void optimizeMethod(int [][] mat){
+        int n = mat.length;
+        int m = mat[0].length;
+
+        Boolean [] row = new Boolean[n];
+        Boolean []col = new Boolean[m];
+
+        for(int i=0; i<n;i++)
+            row[i]=false;
+        for(int i=0; i<m; i++)
+            col[i]=false;
+
+        for (int i = 0; i < mat.length; i++) {
+            for (int j = 0; j < mat[0].length; j++) {
+                if (mat[i][j] == 0) {
+                    row[i]=true;
+                    col[j]=true;
+                }
+            }
+        }
+
+        for(int i=0; i<n; i++){
+            if(row[i]){
+                for(int j=0; j<m; j++)
+                    mat[i][j]=0;
+            }
+        }
+        for(int i=0; i<m; i++){
+            if(col[i]){
+                for(int j=0; j<n; j++)
+                    mat[j][i]=0;
+            }
+        }
 
     }
 
@@ -49,8 +81,9 @@ public class SetMatrixZero {
         };
 
         SetMatrixZero obj = new SetMatrixZero();
-        obj.basicMethod(matrix);
+//        obj.basicMethod(matrix);
 
+        obj.optimizeMethod(matrix);
         // Print result
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
