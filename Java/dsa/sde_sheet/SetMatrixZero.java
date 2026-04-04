@@ -39,6 +39,7 @@ public class SetMatrixZero {
 
     private void optimizeMethod(int [][] mat){
         int n = mat.length;
+
         int m = mat[0].length;
 
         Boolean [] row = new Boolean[n];
