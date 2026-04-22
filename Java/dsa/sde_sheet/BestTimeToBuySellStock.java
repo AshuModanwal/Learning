@@ -12,6 +12,7 @@ public class BestTimeToBuySellStock {
                 buyPrice = prices[i];
             }
 
+
             if(buyPrice!=Integer.MAX_VALUE){
                 profit = Math.max(profit, prices[i] - buyPrice);
             }
