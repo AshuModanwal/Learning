@@ -1,4 +1,4 @@
-package dsa.sde_sheet;
+package dsa.sde_sheet.array;
 
 public class SecondLargest {
 
