@@ -1,5 +1,8 @@
 package basic.Thread;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class MyThread {
     public static void main(String []args){
 
@@ -10,6 +13,9 @@ public class MyThread {
         extendedThread.run();
         implementedThread.run();
         extendedThread.start();
+
+        ExecutorService executor = Executors.newFixedThreadPool(5);
+
 
     }
 }
